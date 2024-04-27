@@ -81,14 +81,14 @@ class Env:
         com_dict = dict()
         for i in doc1:
             if com_dict.get(i):
-                com_dict[i]=1
+                com_dict[i]+=1
             else:
-                com_dict+=1
+                com_dict[i]=1
         for i in doc2:
             if com_dict.get(i):
-                com_dict[i]=-1
+                com_dict[i]-=1
             else:
-                com_dict-=1
+                com_dict[i]=-1
         dist = 0
         for i in com_dict.values():
             dist += math.abs(i)
